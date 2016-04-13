@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WeBall</title>
+    <link rel="stylesheet" href="./scholarly.css">
+    <link rel="stylesheet" href="./prism-coy.css">
+    <script src="./prism.js" defer></script>
+  </head>
+  <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+      <p class="title">WeBall</p>
+      <p class="subtitle">Web Technology project</p>
+    </header>
+    <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+      <h1>WeBall</h1>
+      <section>
+        <ol>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="http://berjon.com/" typeof="schema:Person">
+              <span property="schema:givenName">Samuel</span>
+              <span property="schema:familyName">Lazar</span>
+            </a>
+            <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/">a</a>
+            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+              <a property="schema:email" href="mailto:lazar.samuel@gmail.com" title="corresponding author">&#9993;</a>
+            </sup>
+          </li>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="http://berjon.com/" typeof="schema:Person">
+              <span property="schema:givenName"> Razvan</span>
+              <span property="schema:familyName">Holicov</span>
+            </a>
+            <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/">a</a>
+            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+              <a property="schema:email" href="mailto:holicov.razvan@gmail.com" title="corresponding author">&#9993;</a>
+            </sup>
+          </li>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="http://berjon.com/" typeof="schema:Person">
+              <span property="schema:givenName"> Popa</span>
+              <span property="schema:familyName">Razvan</span>
+            </a>
+            <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/">a</a>
+            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+              <a property="schema:email" href="mailto:popa.razvan@gmail.com" title="corresponding author">&#9993;</a>
+            </sup>
+          </li>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="http://berjon.com/" typeof="schema:Person">
+              <span property="schema:givenName"> Grigoriu</span>
+              <span property="schema:familyName">Stefan</span>
+            </a>
+            <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/">a</a>
+            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+              <a property="schema:email" href="mailto:grigoriu.stefan@gmail.com" title="corresponding author">&#9993;</a>
+            </sup>
+          </li>
+        </ol>
+        <ol>
+          <li id="scienceai">
+            <a href="http://science.ai/" typeof="schema:Corporation">
+              <span property="schema:name">FII.ro</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <section typeof="sa:Abstract" id="abstract">
+        <h2>Introducere</h2>
+        <p style="text-indent: 25px">
+          WeBall este o aplicatie web, care ajuta la organizarea unor campionate de fotbal (sau orice joc de echipa similar:handbal, polo, volei, crichet, basket etc) intr-un mod organizat (ORGANIZÁ, organizez, vb. I. Tranz. A face ca un grup social, o instituție etc. să funcționeze sau să acționeze organic (repartizând însărcinările și coordonându-le conform unui plan adecvat, provine din Franceza „Organiser” ) si rapid (EFICIÉNT, -Ă adj. Care-și face efectul; care produce un anumit efect (folositor); eficace. [Pron. -ci-ent. / < fr. efficient]. Aplicatia va oferi un clasament cu rezultatele meciurilor disputate in realitate, in diverse campionate si ofera posibilitatea inserarii de impresii live/post-factum, eventual se pot crea poll-uri in privinta pronosticurilor. In plus, aplicatia ofera posibilitatea utilizatorilor de a-si  crea propriile campionate avand diferite stagii/grupe (finale/semifinale/sferturi/optimi) pentru a putea contoriza rezultatele unor meciuri. </p>
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="motivation">
+        <h2>Scop/Public țintă</h2>
+        <aside typeof="schema:WPSideBar">
+          <p style="text-indent: 25px">
+            Scopul acestei aplicații web este de a oferi posibilitatea de a crea organizat si rapid campionate proprii. Se doreste ca aceasta aplicatie sa ajute utilizatorul sa castige timp in dezvoltarea unor scheme.</p>
+           <p style="text-indent: 25px">
+            Publicul țintă este format din totalitatea jucatorilor amatori dar si pasionatilor de jocuri electronice.
+          </p>
+        
+        </aside>
+      </section>
+      <section>
+        <h2>Mod de utilizare prevăzut:</h2>
+        <p style="text-indent:25px">
+          Interfața de login a unui utilizator necesita 2 campuri, un cont de utilizator unic si parola aferenta acestuia.
+            <ul>
+            <li><code>Username</code>: Utilizatorul va introduce id-ul sau unic creat la inregistrare.</li>
+            <li><code>Password</code>: Parola aferenta id-ului/contului introdus.</li>
+          </ul>
+        </p>
+        <p>În cazul în care utilizatorul dorește inregistrare unui nou cont acesta va fi redirectionat spre o noua pagina unde i se va oferi aceasta posibilitate.
+        <br/>Interfata de inregistrare cuprinde patru campuri obligatorii pentru crearea unui nou cont.
+          <ul>
+            <li><code>Username</code>: Utilizatorul introduce un sir alfanumeric unic in baza noastra de date, in cazul unuia deja existent va fi atentionat.</li>
+            <li><code>E-mail</code>: In acest camp se va introduce o adresa de mail, in cazul in care exista un cont deja existent utilizatorul poate primi pe email datele contului existent.</li>
+            <li><code>Password</code>: Parola dorita pentru contul nou creat, aceasta trebuie sa respecte o norma minima de securitate(ex. Alfanumeric).</li>
+            <li><code>Confirm password</code>: In acest camp se va reintroduce parola completata anterior pentru confirmare.</li>
+          </ul>
+		  După ce utilizatorul s-a logat, acesta va putea selecta urmatoarele optiuni:
+		  <ol>
+		  <li>Adaugarea unor echipe de interes (disponibile) in vederea notificarii utilizatorului cu ultimele evenimente de interes.(rezultatele ultimelor meciuri, transferuri, accidentari, etc).</li>
+<li>Crearea unui campionat propriu cu urmatoarele optiuni: Descrierea campionatului, selectarea numarului de meciuri, numarului de grupe, inserarea de nume personalizate pentru echipe si structura acestora.(numele jucatorilor echipei, porecle, sigla, moto, etc).</br>
+Prestabilit, creatorul campionatului va avea drepturi de administrare si in plus va putea oferi acest drept si altor utilizatori.</li>
+<li>Vizualizarea clasamentului curent.</li>
+<li>Actualizarea clasamentului.(cu verificarea drepturilor de adminstrare).</li>
+<li>Adaugarea de comentarii(impresii) si poll-uri(pronosticuri).</li>
+<li>Optiuni de administrare a contului.(Schimbarea datelor personale, avatar-ului, parolei, moto-ului)</li>
+<li>Delogarea utilizatorului din interfata.</li>
+	</ol>
+        </p>
+      </section>
+      <section typeof="sa:Results" id="definition">
+        <h2>Vizualizarea paginei principale</h2>
+		<img src="./img/index.png" style="margin-top:35px">
+		<br />
+		<h2>Vizualizarea sectiunii login</h2>
+		<img src="./img/login.png" style="margin-top:35px">
+		<br/>
+		<h2>Vizualizarea schemei bazei de date intiale</h2>
+		<center><img src="./img/tw.png" style="margin-top:35px"> </center>
+		<br />
+		<h2>Structura bazei de date</h2>
+		<h3>
+                Table Users este structura astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id</code></td>
+                <td>Number</td>
+				<td>PK</td>
+				<td>reprezinta id-ul unic al userilor</td>
+               <tr>
+                <td><code>Name</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta numele</td>
+              </tr>
+                <tr>
+                <td><code>FirstName</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta prenumele</td>
+              </tr>
+              <tr>
+                <td><code>Genre</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta sexul/poate fi si tip bit</td>
+              </tr>
+			  <tr>
+                <td><code>AccesLevel</code></td>
+                <td>Number</td>
+				<td>none</td>
+				<td>reprezinta drepturile userului de acces</td>
+              </tr>
+			  <tr>
+                <td><code>Age</code></td>
+                <td>Number</td>
+				<td>none</td>
+				<td>reprezinta varsta</td>
+              </tr>
+			  <tr>
+                <td><code>Avatar</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta src-ul imaginii userului</td>
+              </tr>
+			  <tr>
+                <td><code>Motto</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta citatul lui preferat</td>
+              </tr>
+			  <tr>
+                <td><code>Password</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta parola, tipul depinde de functia de criptare folosita</td>
+              </tr>
+              <caption>
+                Acest tabel va contine informatiile fiecarui user.
+              </caption>
+            </table>
+          </figure>
+
+		  <h3>
+                Table Championships este structurat astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id_C</code></td>
+                <td>Number</td>
+				<td>PK</td>
+				<td>reprezinta id-ul unic al campionatelor</td>
+               <tr>
+                <td><code>Name</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta numele</td>
+              </tr>
+                <tr>
+                <td><code>Logo</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta src-ul logoului</td>
+              </tr>
+              <tr>
+                <td><code>Team_nr</code></td>
+                <td>Number</td>
+				<td>none</td>
+				<td>reprezinta numarul de echipe ce va contine</td>
+              </tr>
+			  <tr>
+                <td><code>Group_nr</code></td>
+                <td>Number</td>
+				<td>none</td>
+				<td>reprezinta numar de grupe ce va contine</td>
+              </tr>
+			  <tr>
+                <td><code>Final_nr</code></td>
+                <td>Number</td>
+				<td>none</td>
+				<td>reprezinta numarul de finale</td>
+              </tr>
+			  <tr>
+                <td><code>Motto</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta sloganul campionatului</td>
+              </tr>
+			  <tr>
+                <td><code>Logo</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta src-ul lui logoului</td>
+              </tr>
+			  <tr>
+                <td><code>Date</code></td>
+                <td>Date</td>
+				<td>none</td>
+				<td>reprezinta data cand a fost creat campionatul</td>
+              </tr>
+              <caption>
+                Tabela aceasta va contine informatiile necesare despre campionatele create.
+              </caption>
+            </table>
+          </figure>
+		  <h3>
+                Table combinations este structurat astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul userului</td>
+               <tr>
+                <td><code>Id_C</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul campionatului</td>
+              </tr>
+				<caption>
+				Aceasta tabela are rolul de join intre tabela users si championships.
+				</caption>
+            </table>
+          </figure>
+		  <h3>
+                Table Polles este structurat astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul unic al userilor</td>
+               <tr>
+                <td><code>Id_P</code></td>
+                <td>Number</td>
+				<td>PK</td>
+				<td>reprezinta id-ul unic polle-urilor</td>
+              </tr>
+                <tr>
+                <td><code>Question</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta intrebarea polle-ului</td>
+              </tr>
+              <tr>
+                <td><code>Date</code></td>
+                <td>Date</td>
+				<td>none</td>
+				<td>reprezinta data cand a fost creat polle-ul</td>
+              </tr>
+			  <caption>
+			  Tabela Polle va salva datele necesarii creerarii polle-urilor
+			  </caption>
+            </table>
+          </figure>
+		  <h3>
+                Table Choice_Polle este structurat astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id_P</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul unic al Polle-urilor</td>
+               <tr>
+                <td><code>Choice</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta alegere</td>
+              </tr>
+                <tr>
+                <td><code>Id_C</code></td>
+                <td>Number</td>
+				<td>PK</td>
+				<td>reprezinta id-ul unui alegerii</td>
+              </tr>
+              <tr>
+                <td><code>Date</code></td>
+                <td>Date</td>
+				<td>none</td>
+				<td>reprezinta data creearii...</td>
+              </tr>
+            </table>
+          </figure>
+		  <h3>
+                Table Results_Pole este structurat astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id_P</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul unic al polle-urilor</td>
+               <tr>
+                <td><code>Id_C</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul campionatelor</td>
+              </tr>
+                <tr>
+                <td><code>Id</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul userilor</td>
+              </tr>
+			  <caption>
+			  Aceasta tabela are rolul de join.
+			  </caption>
+              </figure>
+			  </table>
+			  <h3>
+                Table Combinations_Pref este structurat astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id_CP</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul unic din tabela custom_pref</td>
+               <tr>
+                <td><code>TeamName</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta numele echipei</td>
+              </tr>
+                <caption>
+				Acest tabel are rolul de join.
+				</caption>
+            </table>
+          </figure>
+            
+			<h3>
+                Table Custom_Pref este structurat astfel:
+              </h3>
+          <figure typeof="schema:Table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Column_name</th>
+                  <th>Type</th>
+				  <th>Constraints</th>
+				  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tr>
+                <td><code>Id</code></td>
+                <td>Number</td>
+				<td>FK</td>
+				<td>reprezinta id-ul unic al userilor din users</td>
+               <tr>
+                <td><code>Team_Nr</code></td>
+                <td>Number</td>
+				<td>none</td>
+				<td>reprezinta numarul de echipe</td>
+              </tr>
+                <tr>
+                <td><code>Description</code></td>
+                <td>Varchar2</td>
+				<td>none</td>
+				<td>reprezinta o scurta descriere</td>
+              </tr>
+              <tr>
+                <td><code>Id_CP</code></td>
+                <td>Number</td>
+				<td>PK</td>
+				<td>reprezinta id-ul unic al fiecarei custom pref</td>
+              </tr>
+			  <caption>
+			  Tabela aceasta are rolul de a salva datele o/sau mai multe echipa/e despre care siteul va arata informatii cautand pe net.
+			  </caption>
+            </table>
+          </figure>
+        </section>
+		<section>
+		<h2>Raport de completare a taskurilor<h2>
+		<figure typeof="schema:Table">
+		<table>
+		<thead>
+			<tr>
+			<th><strong>Numele persoanei</th>
+			<th><strong>Task</th> 
+			<th><strong>Data</th>
+			</tr>
+		</thead>
+			<tr>
+			<td>Popa Razvan</td>
+			<td>Structura bazei de date.</td>
+			<td>05/04/2016</td>
+			</tr>
+			<tr>
+			<td>Lazar Samuel</td>
+			<td>Creare design layout index</td>
+			<td>06/04/2016</td>
+			</tr>
+			<tr>
+			<td>Grigoriu Stefan</td>
+			<td>Crearea diagramei bazei de date</td>
+			<td>06/04/2016</td>
+			</tr>
+			<tr>
+			<td>Holicov Razvan</td>
+			<td>Cautarea de date necesare proiectului.</td>
+			<td>06/04/2016</td>
+			</tr>
+			<tr>
+			<td>Grigoriu Stefan</td>
+			<td>Descrierea tabelelor bazei de date</td>
+			<td>08/04/2016</td>
+			</tr>
+			<tr>
+			<td>Lazar Samuel</td>
+			<td>Creare design layout login</td>
+			<td>08/04/2016</td>
+			</tr>
+			<tr>
+			<td>Holicov Razvan</td>
+			<td>Organizarea datelor</td>
+			<td>10/04/2016</td>
+			</tr>
+			<tr>
+			<td>Popa Razvan</td>
+			<td>Organizarea datelor</td>
+			<td>10/04/2016</td>
+			</tr>
+			<tr>
+			<td>Lazar Samuel</td>
+			<td>Implementare layout</td>
+			<td>11/04/2016</td>
+			</tr>
+			<tr>
+			<td>Popa Razvan</td>
+			<td>Scrierea documentatiei</td>
+			<td>12/04/2016</td>
+			</tr>
+			<tr>
+			<td>Holicov Razvan</td>
+			<td>Scrierea documentatiei</td>
+			<td>12/04/2016</td>
+			</tr>
+		</table>
+		</figure>
+		</section>
+    <section>
+      <h2 >Bibliografie</h2>
+      <ul style="text-align: center">
+        <li><a href="https://www.draw.io">https://www.draw.io</a> Pentru crearea diagramei bazei de date</li>
+         <li><a href="http://google.com">http://google.com</a> Pentru cautarea de informatii in general</li>
+        <li><a href="http://scholarly.vernacular.io">http://scholarly.vernacular.io</a> Pentru layoutul documentatiei</li>
+        <li><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14237/statviews_1037.htm#i1576022">https://docs.oracle.com/</a> Pentru tipuri de date si constrainuri</li>
+      </ul>
+    </section>
+	<!--
+    <footer>
+      <p>
+        <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        <a href="https://twitter.com/sciencedotai">@sciencedotai</a>
+        •
+        <a href="https://github.com/scienceai/scholarly.vernacular.io">Contribute</a>
+        •
+        Brought to you by the
+        <a href="http://science.ai/"><img src="sciencedotai.svg" alt="science.ai logo" height="20px"></a>
+        League of JStice
+      </p>
+    </footer>--> 
+  </body>
+</html>
