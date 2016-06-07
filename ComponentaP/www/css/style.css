@@ -1,0 +1,75 @@
+body{
+	margin:0;
+	background-image:url("../images/l2.jpeg");
+	background-size:cover;
+	background-position:center center;
+	font-family: 'Roboto', sans-serif;
+}
+.marginbot{
+	margin-bottom:10px;
+}
+#loginc{
+	position:relative;
+	float:left;
+	width:330px;
+	height:360px;
+	left:50%;
+	margin-left:-165px;
+	top:50%;
+	margin-top:-180px;
+	border-radius:5px;
+	background-color:rgba(255,255,255,0.95);
+	box-shadow:0px 1px 5px rgba(0,0,0,.3);
+}
+#loginc h1{
+	font-family: 'Roboto', sans-serif;
+	text-align:center;
+	color:#0B5656;
+	font-size: 36px;
+	font-weight: 200;
+}
+#loginc input{
+	font-family: 'Roboto', sans-serif;
+	font-size:15px;
+	padding:10px;
+	background-color:transparent;
+	border:solid 1px #0B5656;
+	border-radius:5px;
+	width:280px;
+	left:50%;
+	margin-left:-140px;
+	position:relative;
+	float:left;
+	margin-top:10px;
+	clear:both;
+	font-weight:300;
+}
+#loginc p{
+	position:relative;
+	float:left;
+	clear:both;
+	width:100%;
+	text-align:center;
+	font-family: 'Roboto', sans-serif;
+	color:#555;
+}
+#loginc a{
+	font-family: 'Roboto', sans-serif;
+	font-size:15px;
+	padding:10px;
+	background-color:#8F1212;
+	border-radius:5px;
+	border:0;
+	width:150px;
+	left:50%;
+	margin-left:-85px;
+	position:relative;
+	float:left;
+	margin-top:0px;
+	clear:both;
+	font-weight:300;
+	cursor:pointer;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+}

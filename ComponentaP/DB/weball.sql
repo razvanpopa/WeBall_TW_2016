@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 04, 2016 at 08:57 PM
+-- Generation Time: Jun 07, 2016 at 10:35 AM
 -- Server version: 10.1.6-MariaDB
 -- PHP Version: 5.5.28
 
@@ -31,9 +31,20 @@ CREATE TABLE IF NOT EXISTS `championships` (
   `name` varchar(255) COLLATE utf8_bin NOT NULL,
   `details` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `logo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `team_nr` int(11) NOT NULL,
+  `team_nr` int(11) DEFAULT NULL,
   `date` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `championships`
+--
+
+INSERT INTO `championships` (`id_championship`, `name`, `details`, `logo`, `team_nr`, `date`) VALUES
+(1, 'UEFA CHAMPIONS', 'Cei mai tari campionate ever pt ca uefa .', 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_FC_Bayern_M%C3%BCnchen.svg', 5, '2016-06-05'),
+(2, 'FBK SOUTH DAKOTA', 'UEFA UEFA UEFA ! FIFA', 'https://upload.wikimedia.org/wikipedia/de/3/3c/AS_Monaco.svg', 4, '2016-06-07'),
+(3, 'Fifa 2016 XBOX', 'Turneul organizat de insoft si bitdefnder pt un loc in palas la kfc', 'https://hdlogo.files.wordpress.com/2013/11/real-madrid-hd-logo.png', 3, '2016-06-06'),
+(4, 'BRAVO PETROSANI 2012', 'sadasdasda', 'http://zllox.com/wp-content/uploads/2016/03/Logo-Free.jpg', NULL, '2016-06-06'),
+(5, 'Barnova Champions', 'Un campionat pe xbox', 'http://upload.wikimedia.org/wikipedia/de/e/e7/Logo_TSG_Hoffenheim.svg', NULL, '2016-06-06');
 
 -- --------------------------------------------------------
 
@@ -46,6 +57,18 @@ CREATE TABLE IF NOT EXISTS `championships_admin` (
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `championships_admin`
+--
+
+INSERT INTO `championships_admin` (`id_championship`, `id_user`) VALUES
+(2, 1),
+(3, 2),
+(3, 3),
+(2, 3),
+(1, 1),
+(5, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +80,24 @@ CREATE TABLE IF NOT EXISTS `championship_teams` (
   `id_team` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `championship_teams`
+--
+
+INSERT INTO `championship_teams` (`id_championship`, `id_team`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(3, 1),
+(3, 2),
+(3, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -65,10 +106,19 @@ CREATE TABLE IF NOT EXISTS `championship_teams` (
 
 CREATE TABLE IF NOT EXISTS `comments` (
   `id_comment` int(11) NOT NULL,
-  `id_match` int(11) NOT NULL,
+  `id_campionat` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `details` varchar(255) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id_comment`, `id_campionat`, `id_user`, `details`) VALUES
+(1, 1, 1, 'HAI kapatos!'),
+(2, 1, 1, 'Oare mai are vreo sansa Rapid?'),
+(3, 2, 1, 'Slab sezonul acesta, ma asteptam mai mult de la Steaua');
 
 -- --------------------------------------------------------
 
@@ -78,8 +128,17 @@ CREATE TABLE IF NOT EXISTS `comments` (
 
 CREATE TABLE IF NOT EXISTS `custom_preference` (
   `id_user` int(11) NOT NULL,
-  `team_name` varchar(255) COLLATE utf8_bin NOT NULL
+  `id_team` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `custom_preference`
+--
+
+INSERT INTO `custom_preference` (`id_user`, `id_team`) VALUES
+(1, 5),
+(1, 81),
+(1, 86);
 
 -- --------------------------------------------------------
 
@@ -382,7 +441,25 @@ CREATE TABLE IF NOT EXISTS `matches` (
   `id_team2` int(11) NOT NULL,
   `score` varchar(255) COLLATE utf8_bin NOT NULL,
   `date` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `matches`
+--
+
+INSERT INTO `matches` (`id_meci`, `id_championship`, `id_team1`, `id_team2`, `score`, `date`) VALUES
+(1, 1, 1, 2, '2-0', '2016-06-05'),
+(2, 1, 1, 3, '0-1', '2016-06-06'),
+(3, 1, 1, 4, '12-12', '2016-06-12'),
+(4, 1, 1, 5, '0-9', '2016-06-07'),
+(5, 1, 3, 4, '2-1', '2016-06-01'),
+(6, 1, 4, 5, '2-2', '2016-06-14'),
+(7, 2, 1, 4, '22-22', '2016-06-13'),
+(8, 2, 3, 4, '1-2', '2016-06-21'),
+(9, 3, 1, 2, '3-0', '2016-06-05'),
+(10, 3, 1, 3, '3-3', '2016-06-01'),
+(11, 3, 2, 3, '4-5', '2016-06-14'),
+(12, 1, 3, 5, '1123-123', '2016-06-06');
 
 -- --------------------------------------------------------
 
@@ -418,23 +495,70 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `name` varchar(255) COLLATE utf8_bin NOT NULL,
   `logo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `motto` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id_team`, `name`, `logo`, `motto`) VALUES
+(1, 'STEAUA ', 'https://upload.wikimedia.org/wikipedia/de/3/3c/AS_Monaco.svg', 'Cu steaua noi mergem!'),
+(2, 'RAPID', 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_FC_Bayern_M%C3%BCnchen.svg', 'CEI MAI SLABI'),
+(3, 'CLUJ NAPOCA', 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_FC_Bayern_M%C3%BCnchen.svg', 'JAVRELE'),
+(4, 'KAPATOS', 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_FC_Bayern_M%C3%BCnchen.svg', 'google power1'),
+(5, 'GAURA VASLUI', 'https://hdlogo.files.wordpress.com/2013/11/real-madrid-hd-logo.png', 'Puterea e cu noi!'),
+(6, 'Panificom', 'http://salvaticopiii-iasi.ro/wp-content/uploads/2014/12/logo_panifcom.jpg', 'Salvati copii');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `teams_user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-  `id_user` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8_bin NOT NULL,
-  `password` varchar(32) COLLATE utf8_bin NOT NULL,
+CREATE TABLE IF NOT EXISTS `teams_user` (
+  `id_team` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `teams_user`
+--
+
+INSERT INTO `teams_user` (`id_team`, `id_user`) VALUES
+(1, 1),
+(3, 2),
+(2, 1),
+(5, 1),
+(6, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL,
+  `user` varchar(255) COLLATE utf8_bin NOT NULL,
+  `pass` varchar(32) COLLATE utf8_bin NOT NULL,
   `genre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `age` int(10) DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `motto` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `motto` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `security` varchar(50) COLLATE utf8_bin NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  `admin` tinyint(1) DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `user`, `pass`, `genre`, `age`, `avatar`, `motto`, `email`, `security`, `active`, `admin`) VALUES
+(1, 'LazarSamuel', 'a3dcb4d229de6fde0db5686dee47145d', 'Barbat', 21, NULL, 'lazaros es sadasnd', 'lazar.samuel@gmail.com', 'cV9WIsiesXQUQFPtuZ27NpsGyxrmBtP1AcCJxusW8uwIdard', 1, NULL),
+(2, 'vandame', '0cc175b9c0f1b6a831c399e269772661', NULL, NULL, NULL, NULL, 'razvan.popa2010@gmail.com', '8fo2SEu8Tylv8ete6xYldeSsVwwhnrsCDcD8cUxWWwXGa9OIYX', 1, NULL),
+(3, 'travian', '0cc175b9c0f1b6a831c399e269772661', NULL, NULL, NULL, NULL, 'a@yahoo.com', 'ehmkHuYXlATMw8WnPLRg6mJfgMgahWgghBIhfEVRYX8h2VVZpF', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -471,25 +595,30 @@ ALTER TABLE `teams`
   ADD PRIMARY KEY (`id_team`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `users`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `championships`
+--
+ALTER TABLE `championships`
+  MODIFY `id_championship` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `matches`
 --
 ALTER TABLE `matches`
-  MODIFY `id_meci` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_meci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `polles`
 --
@@ -499,12 +628,12 @@ ALTER TABLE `polles`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id_team` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_team` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
